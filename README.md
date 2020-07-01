@@ -11,5 +11,7 @@ the switch_name must begin with swe or swc
    * swc - Core Switch
 
 example 
+```
     swc-sepp2;10.10.10.102;A1-B8
     swe-sepp1;10.10.10.1;49-52
+```
