@@ -3,7 +3,7 @@
 this script generates switch configs the examples are for hp switches
 build your control file switche.csv
 
- * <switch_name>;<ip-adress>;<port-tagged-uplinks-vlans>
+```<switch_name>;<ip-adress>;<port-tagged-uplinks-vlans>```
 
 the switch_name must begin with swe or swc
    * swe - Edgeswitch
