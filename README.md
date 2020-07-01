@@ -7,7 +7,8 @@ build your control file switche.csv
 
 the switch_name must begin with swe or swc
    * swe - Edgeswitch
-   * swc - Distribution Switch
+   * swd - Distritbution Switch
+   * swc - Core Switch
 
 example 
     swc-sepp2;10.10.10.102;A1-B8

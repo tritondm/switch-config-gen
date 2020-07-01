@@ -36,9 +36,13 @@ def generate_file(hostname, ipaddress, portrange, type):
 with open('switche.csv', mode='r') as swichtcsv:
     switchreader = csv.reader(swichtcsv, delimiter=';')
     for switch in switchreader:
-        if str(switch[0]).find('swc') != -1:
+        if str(switch[0]).find('swc-') != -1:
+            generate_file(switch[0], switch[1], switch[2], "core")
+        elif str(switch[0]).find('swd-') != -1:
+            generate_file(switch[0], switch[1], switch[2], "dist")
+        elif str(switch[0]).find('swe-') != -1:
             generate_file(switch[0], switch[1], switch[2], "core")
         else:
-            generate_file(switch[0], switch[1], switch[2], "edge")
+            print "the name of the switch " + switch[0] + " must begin with <swc-> or <swd-> or <swc->"
 
 swichtcsv.close()
