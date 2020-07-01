@@ -1,0 +1,77 @@
+hostname "<hostname>"
+logging 10.10.1.227
+logging severity info
+timesync ntp
+ntp unicast
+ntp server 10.10.1.250 iburst
+ntp server 10.10.1.251 iburst
+ntp enable
+no telnet-server
+time timezone 60 daylight-time-rule middle-europe-and-portugal
+no web-management
+ip default-gateway 10.10.10.254
+snmp-server community "public" restricted
+
+vlan 100
+   name "Forschung"
+   tagged <port-range>
+   no ip address
+   exit
+vlan 101
+   name "Verwaltung"
+   tagged <port-range>
+   no ip address
+   exit
+vlan 102
+   name "FSDrucker"
+   tagged <port-range>
+   no ip address
+   exit
+vlan 103
+   name "FSIoT"
+   tagged <port-range>
+   no ip address
+   exit
+vlan 104
+   name "Schule"
+   tagged <port-range>
+   no ip address
+   exit
+vlan 105
+   name "SchuleDrucker"
+   tagged <port-range>
+   no ip address
+   exit
+vlan 106
+   name "Guest"
+   tagged <port-range>
+   no ip address
+   exit
+vlan 107
+   name "IoT"
+   tagged <port-range>
+   no ip address
+   exit 
+vlan 108
+   name "ItMgmt"
+   tagged <port-range>
+   ip address <ip_mgmt_address> <ip_mgmt_subnet>
+   exit
+vlan 109
+   name "WLANMgmt"
+   tagged <port-range>
+   no ip address
+   exit
+vlan 110
+   name "VoIP"
+   tagged <port-range>
+   no ip address
+   qos priority 7
+   voice
+   exit
+
+no tftp server
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+no dhcp tr69-acs-url
